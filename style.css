@@ -34,7 +34,11 @@ background-color: #f4f4f4;
  	color: black;
  	font-weight: 900;
  	border-radius: 15px;
+ 	opacity: 0;
  	
+ }
+ .bubble.-invisible {
+ 	opacity: 1;
  }
  .bubble:before {
  	position: absolute;

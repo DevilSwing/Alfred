@@ -13,6 +13,10 @@ $('.bubble').text(AlfredSpeech);
 
 });
 
+$('.js-bubble').click(function(){
+	$('.bubble').toggleClass('-invisible');
+});
+
 
 
 });
