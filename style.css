@@ -3,6 +3,9 @@ margin: 0;
 font-family: "Trebuchet MS";
 background-color: #f4f4f4;
  }
+ * {
+ 	box-sizing: border-box;
+ }
  .Alfred {
  	position: absolute;
  	left: 50%;
@@ -21,23 +24,25 @@ background-color: #f4f4f4;
  	transform:translate(-50%);
  	width: 500px;
  	height: 250px;
+ 	padding: 25px;
  	background-color: #565656;
  	border-radius: 20px;
  	border: 4px solid black;
  }
  .bubble {
  	position: absolute;
- 	right: -40px;
- 	top: -20px;
+ 	right: -160px;
+ 	top: 38px;
  	padding: 40px;
  	background-color: white;
  	color: black;
  	font-weight: 900;
  	border-radius: 15px;
  	opacity: 0;
- 	
+ 	min-width: 140px;
+ 	transition: .4s;
  }
- .bubble.-invisible {
+ .bubble.-visible {
  	opacity: 1;
  }
  .bubble:before {
@@ -50,3 +55,28 @@ background-color: #f4f4f4;
  	width: 15px;
  	height: 15px;
  }
+ input,
+ button {
+ 	border-radius: 4px;
+ 	padding: 6px;
+ 	font-size: 13px;
+ 	font-weight: 900;
+ 	border:none;
+ 	outline: none;
+ 	transition: .4s;
+ }
+ input {
+ 	margin-right: 20px;
+ 	margin-bottom: 20px;
+ }
+  button {
+  	background-color: #f4f4f4;
+  }
+  button:hover {
+  	background-color: black;
+  	color: white;
+
+  }
+  button:active {
+  	background-color: red;
+  }
