@@ -1,23 +1,67 @@
 $(document).ready(function(){
 	
- $('.js-count').click(function(){
-showBubble($('.js-firstNumber').val() + $('.js-secondNumber').val());
+ 	$('.js-plus').click(function(){
+	 	showBubble(Number(getFirstWord()) + Number(getSecondWord()));
+	});
 
+	 	$('.js-minus').click(function(){
+	 	showBubble(Number(getFirstWord()) - Number(getSecondWord()));
+	});
+	 	$('.js-multiply').click(function(){
+	 	showBubble(Number(getFirstWord()) * Number(getSecondWord()));
+	});
+	 	$('.js-divide').click(function(){
+	 		if (checkInputData().isNumber) {
+	 			showBubble(Number(getFirstWord()) / Number(getSecondWord()));
+	 		} else {
+	 			 if (checkInputData().empty) {
+	 			 	showBubble('ПУСТО');
+	 			 } else {
+	 			 	showBubble(getFirstWord() + ' ' + getSecondWord());
+	 			 }
+	 		}
+	 	
+	});
 
+	// ====================================
+	// ====================================
+	function checkInputData() {
+		if ($.isNumeric(getFirstWord()) && $.isNumeric(getFirstWord())) {
+			return {
+				isNumber:true
+			};	
+		} else if (getFirstWord() === '' && getSecondWord() === '') {
+			return {
+				isNumber:  false,
+				empty: true
+			};
+		} else {
+			return {
+				isNumber:  false,
+				empty: false
+			};
+		}
+	}
+
+	function getFirstWord() {
+ 		return $('.js-firstNumber').val();
+ 	};
+
+	function getSecondWord() {
+ 		return $('.js-secondNumber').val();
+ 	};
+
+	function showBubble(text) {
+		$('.bubble').text(text);
+		$('.bubble').addClass('-visible');
+		setTimeout(function() {
+			$('.bubble').removeClass('-visible');
+		}, 2000);
+	}
 
 
 });
-
-function showBubble(text) {
-			$('.bubble').text(text);
-			$('.bubble').addClass('-visible');
-			setTimeout(function() {
-				$('.bubble').removeClass('-visible');
-			}, 2000);
-}
-
-
-});
+// let firstWord = Number($('.js-firstNumber').val());
 // 	 var inputText = $('.js-firstNumber').val();
 
 // 		if (inputText === "") {
