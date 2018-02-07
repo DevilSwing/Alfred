@@ -2,13 +2,40 @@ $(document).ready(function(){
 	
  	$('.js-plus').click(function(){
 	 	showBubble(Number(getFirstWord()) + Number(getSecondWord()));
+	 	if (checkInputData().isNumber) {
+	 			showBubble(Number(getFirstWord()) / Number(getSecondWord()));
+	 		} else {
+	 			 if (checkInputData().empty) {
+	 			 	showBubble('ПУСТО');
+	 			 } else {
+	 			 	showBubble(getFirstWord() + ' ' + getSecondWord());
+	 			 }
+	 		}
 	});
 
 	 	$('.js-minus').click(function(){
 	 	showBubble(Number(getFirstWord()) - Number(getSecondWord()));
+	 	if (checkInputData().isNumber) {
+	 			showBubble(Number(getFirstWord()) / Number(getSecondWord()));
+	 		} else {
+	 			 if (checkInputData().empty) {
+	 			 	showBubble('ПУСТО');
+	 			 } else {
+	 			 	showBubble(getFirstWord() + ' ' + getSecondWord());
+	 			 }
+	 		}
 	});
 	 	$('.js-multiply').click(function(){
 	 	showBubble(Number(getFirstWord()) * Number(getSecondWord()));
+	 	if (checkInputData().isNumber) {
+	 			showBubble(Number(getFirstWord()) / Number(getSecondWord()));
+	 		} else {
+	 			 if (checkInputData().empty) {
+	 			 	showBubble('ПУСТО');
+	 			 } else {
+	 			 	showBubble(getFirstWord() + ' ' + getSecondWord());
+	 			 }
+	 		}
 	});
 	 	$('.js-divide').click(function(){
 	 		if (checkInputData().isNumber) {
@@ -25,10 +52,23 @@ $(document).ready(function(){
 
 	// ====================================
 	// ====================================
+
+ 	function showNotNumericData(){
+ 		if {getSecondWord() ==0
+ 		} else {
+ 			return{
+ 				isNumber:true;
+ 				showBubble('пенёк');
+ 			}
+ 		} 
+
+ 	}
+
 	function checkInputData() {
 		if ($.isNumeric(getFirstWord()) && $.isNumeric(getFirstWord())) {
 			return {
-				isNumber:true
+				isNumber:true;
+				
 			};	
 		} else if (getFirstWord() === '' && getSecondWord() === '') {
 			return {
